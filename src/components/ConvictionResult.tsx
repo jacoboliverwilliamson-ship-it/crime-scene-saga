@@ -142,9 +142,9 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
             </Card>
           )}
 
-          {/* Continue Button */}
+          {/* Action Buttons - Different based on correctness */}
           <div className="flex justify-center gap-4 pt-4">
-            {!executionComplete && (
+            {isCorrect && !executionComplete && (
               <Button 
                 onClick={handleProceedToExecution}
                 size="lg"
@@ -154,6 +154,36 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
                 <Zap className="mr-2 w-4 h-4" />
                 Proceed to Execution
               </Button>
+            )}
+            
+            {!isCorrect && !executionComplete && (
+              <div className="flex flex-col gap-3 items-center">
+                <p className="text-sm text-muted-foreground text-center">
+                  What happens to the wrongly convicted?
+                </p>
+                <div className="flex gap-3">
+                  <Button 
+                    onClick={() => {
+                      // Show life sentence instead of execution
+                      setExecutionComplete(true);
+                    }}
+                    size="lg"
+                    variant="outline"
+                    className="border-muted-foreground text-foreground hover:bg-muted"
+                  >
+                    Life in Prison
+                  </Button>
+                  <Button 
+                    onClick={handleProceedToExecution}
+                    size="lg"
+                    variant="destructive"
+                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                  >
+                    <AlertTriangle className="mr-2 w-4 h-4" />
+                    Execute Anyway
+                  </Button>
+                </div>
+              </div>
             )}
             
             {executionComplete && (
