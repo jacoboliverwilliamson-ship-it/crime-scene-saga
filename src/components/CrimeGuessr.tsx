@@ -9,6 +9,7 @@ import { EvidenceBoard } from './EvidenceBoard';
 import { DefenseModal } from './DefenseModal';
 import { ConvictionResult } from './ConvictionResult';
 import { GameTimer } from './GameTimer';
+import { DetectiveIntro } from './DetectiveIntro';
 import { generateCrimeScenario } from '../lib/gameData';
 import type { CrimeScenario, Suspect } from '../types/game';
 import detectiveHero from '@/assets/detective-hero.jpg';
@@ -24,6 +25,7 @@ export const CrimeGuessr: React.FC = () => {
   const [timeUp, setTimeUp] = useState(false);
   const [timerActive, setTimerActive] = useState(false);
   const [resetTimer, setResetTimer] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     loadNewScenario();
@@ -87,8 +89,17 @@ export const CrimeGuessr: React.FC = () => {
     setGameComplete(false);
     setTimeUp(false);
     setTimerActive(false);
+    setShowIntro(true);
     loadNewScenario();
   };
+
+  const handleStartGame = () => {
+    setShowIntro(false);
+  };
+
+  if (showIntro) {
+    return <DetectiveIntro onStartGame={handleStartGame} />;
+  }
 
   if (gameComplete) {
     return (
