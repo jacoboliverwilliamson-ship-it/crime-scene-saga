@@ -45,7 +45,12 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
   }
   return (
     <Dialog open={true}>
-      <DialogContent className="max-w-3xl bg-card border-border max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-3xl bg-card border-border max-h-[90vh] overflow-y-auto relative">
+        {/* Detective Contemplation Background */}
+        <div 
+          className="absolute inset-0 opacity-10 bg-cover bg-center rounded-lg"
+          style={{ backgroundImage: 'url(/lovable-uploads/95a8e041-4a8e-4aa1-996e-74e0b6d299cc.png)' }}
+        />
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {isCorrect ? (
