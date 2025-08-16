@@ -66,7 +66,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <div className="bg-accent/10 border border-accent/30 rounded-lg p-4">
                     <p className="text-accent font-medium">
-                      "The bourbon burns away the taste of disappointment... and drowns out the stench of bologna from Tony's deli downstairs."
+                      "The bourbon burns away the taste of disappointment... and drowns out the stench of bologna from Tony's deli downstairs. That man reeks of garlic like he bathes in the stuff."
                     </p>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                   <p className="text-muted-foreground">
                     Seventy-three percent above the national average, they say. I say those numbers don't 
                     capture the half of it. Every shadow hides a secret, every secret hides a crime. 
-                    And every deli corner reeks of that God-awful bologna smell.
+                    And every deli corner reeks of that God-awful bologna smell mixed with Tony's perpetual garlic stench.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
