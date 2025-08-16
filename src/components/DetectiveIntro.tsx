@@ -72,6 +72,12 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                   </p>
 
                   <p className="text-foreground">
+                    *Pats the .38 Special under my trenchcoat* 
+                    My faithful tool's been with me through every case. Some nights I can't wait to use it - 
+                    blow some domes clean off the shoulders of the scum that think they run this city.
+                  </p>
+
+                  <p className="text-foreground">
                     *Pulls the trench coat tighter against the perpetual chill*
                   </p>
 
@@ -176,13 +182,13 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                   </p>
 
                   <p className="text-foreground italic">
-                    *Steps into the rain, collar turned up against the night, fedora pulled low*
+                    *Steps into the rain, collar turned up against the night, fedora pulled low, hand resting on the tool under my coat*
                   </p>
 
                   <p className="text-foreground">
                     They're wrong. Dead wrong. These scars on my face, the lines around my eyes - 
                     they're a map of every lie I've unraveled, every truth I've dragged kicking and 
-                    screaming out of the shadows.
+                    screaming out of the shadows. And my trusty .38 has helped settle more than a few arguments.
                   </p>
 
                   <p className="text-muted-foreground">
