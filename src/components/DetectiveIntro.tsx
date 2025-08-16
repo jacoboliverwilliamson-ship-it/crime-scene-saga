@@ -24,7 +24,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
     switch (currentPage) {
       case 0:
         return (
-          <div className="max-w-3xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-8">
             <div className="text-center space-y-4 animate-fade-in">
               <h1 className="text-6xl font-bold text-foreground drop-shadow-2xl">
                 Detective Case Files
@@ -32,12 +32,23 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
               <p className="text-xl text-muted-foreground">The City Never Sleeps</p>
             </div>
 
-            <Card className="p-8 bg-card/95 backdrop-blur-sm border-border shadow-[var(--shadow-noir)] animate-scale-in">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 text-primary mb-6">
-                  <Cigarette className="w-6 h-6" />
-                  <h2 className="text-2xl font-bold">The Detective</h2>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Sam Noir Photo */}
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/269a976a-8a28-4ddf-b95e-80cd8da2f820.png" 
+                  alt="Detective Sam Noir" 
+                  className="w-full max-w-md rounded-lg shadow-[var(--shadow-noir)] border border-border animate-scale-in"
+                />
+              </div>
+
+              {/* Character Details */}
+              <Card className="p-8 bg-card/95 backdrop-blur-sm border-border shadow-[var(--shadow-noir)] animate-scale-in">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 text-primary mb-6">
+                    <Cigarette className="w-6 h-6" />
+                    <h2 className="text-2xl font-bold">The Detective</h2>
+                  </div>
 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground italic">
@@ -69,9 +80,10 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                       "The bourbon burns away the taste of disappointment... and drowns out the stench of bologna from Tony's deli downstairs. That man reeks of garlic like he bathes in the stuff."
                     </p>
                   </div>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
 
             <div className="flex justify-center">
               <Button 
