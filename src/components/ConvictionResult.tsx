@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, XCircle, User, FileText, ArrowRight, AlertTriangle } from 'lucide-react';
+import { CheckCircle, XCircle, User, FileText, ArrowRight, AlertTriangle, Zap } from 'lucide-react';
+import { ExecutionScene } from './ExecutionScene';
 import type { Suspect } from '../types/game';
 
 interface ConvictionResultProps {
@@ -21,6 +22,27 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
   explanation,
   onNext 
 }) => {
+  const [showExecution, setShowExecution] = useState(false);
+  const [executionComplete, setExecutionComplete] = useState(false);
+
+  const handleProceedToExecution = () => {
+    setShowExecution(true);
+  };
+
+  const handleExecutionComplete = () => {
+    setShowExecution(false);
+    setExecutionComplete(true);
+  };
+
+  // Show execution scene
+  if (showExecution) {
+    return (
+      <ExecutionScene 
+        suspect={accusedSuspect} 
+        onComplete={handleExecutionComplete}
+      />
+    );
+  }
   return (
     <Dialog open={true}>
       <DialogContent className="max-w-3xl bg-card border-border max-h-[90vh] overflow-y-auto">
@@ -107,15 +129,42 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
             </div>
           )}
 
+          {/* Execution Notice */}
+          {executionComplete && (
+            <Card className="p-4 bg-destructive/20 border-destructive text-center">
+              <div className="space-y-2">
+                <Zap className="text-destructive w-8 h-8 mx-auto" />
+                <p className="text-destructive font-bold">SENTENCE EXECUTED</p>
+                <p className="text-sm text-muted-foreground">
+                  {accusedSuspect.name} has paid the ultimate price
+                </p>
+              </div>
+            </Card>
+          )}
+
           {/* Continue Button */}
-          <div className="flex justify-center pt-4">
-            <Button 
-              onClick={onNext}
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Continue Investigation
-            </Button>
+          <div className="flex justify-center gap-4 pt-4">
+            {!executionComplete && (
+              <Button 
+                onClick={handleProceedToExecution}
+                size="lg"
+                variant="destructive"
+                className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              >
+                <Zap className="mr-2 w-4 h-4" />
+                Proceed to Execution
+              </Button>
+            )}
+            
+            {executionComplete && (
+              <Button 
+                onClick={onNext}
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Continue Investigation
+              </Button>
+            )}
           </div>
         </div>
       </DialogContent>
