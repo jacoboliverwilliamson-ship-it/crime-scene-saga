@@ -198,7 +198,7 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
 
           {/* Action Buttons - Different based on correctness */}
           <div className="flex justify-center gap-4 pt-4">
-            {isCorrect && !executionComplete && (
+            {isCorrect && !executionComplete && !showCarChase && !showExecution && (
               <Button 
                 onClick={handleProceedToExecution}
                 size="lg"
@@ -210,7 +210,7 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
               </Button>
             )}
             
-            {!isCorrect && !executionComplete && (
+            {!isCorrect && !executionComplete && !showCarChase && !showExecution && (
               <div className="flex flex-col gap-3 items-center">
                 <p className="text-sm text-muted-foreground text-center">
                   What happens to the wrongly convicted?
@@ -240,7 +240,7 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
               </div>
             )}
             
-            {executionComplete && (
+            {(executionComplete || chaseResult === 'escaped') && (
               <Button 
                 onClick={onNext}
                 size="lg"
