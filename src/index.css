@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Noir Detective Game Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Noir Color Palette */
+    --background: 220 15% 8%;
+    --foreground: 45 85% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 12%;
+    --card-foreground: 45 80% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 45 85% 88%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 85% 65%;
+    --primary-foreground: 220 20% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 45 80% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 45 25% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 10 85% 55%;
+    --accent-foreground: 45 90% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 90% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 120 60% 45%;
+    --success-foreground: 45 90% 95%;
 
-    --radius: 0.5rem;
+    --evidence: 45 95% 75%;
+    --evidence-foreground: 220 25% 15%;
+
+    --suspect: 220 25% 20%;
+    --suspect-foreground: 45 75% 82%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 18%;
+    --ring: 45 85% 65%;
+
+    /* Gradients */
+    --gradient-noir: linear-gradient(135deg, hsl(220, 20%, 8%) 0%, hsl(220, 25%, 15%) 100%);
+    --gradient-evidence: linear-gradient(90deg, hsl(45, 95%, 75%) 0%, hsl(45, 85%, 65%) 100%);
+    --gradient-danger: linear-gradient(135deg, hsl(0, 75%, 55%) 0%, hsl(10, 85%, 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(120, 60%, 45%) 0%, hsl(140, 70%, 40%) 100%);
+
+    /* Shadows */
+    --shadow-noir: 0 10px 40px -15px hsl(220 25% 5% / 0.8);
+    --shadow-evidence: 0 4px 20px -5px hsl(45 95% 75% / 0.3);
+    --shadow-suspect: 0 8px 30px -10px hsl(220 25% 5% / 0.6);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
