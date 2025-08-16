@@ -41,27 +41,32 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground italic">
-                    *Takes a slow sip of bourbon, feeling the burn chase away the chill*
+                    *Takes a slow sip of bourbon, rain streaking down the window behind me*
                   </p>
                   
                   <p className="text-foreground">
                     Twenty years I've been walking these streets. Twenty years of blood, lies, and broken promises. 
-                    The name's Sam Noir, and I've seen enough darkness to fill a dozen lifetimes.
+                    The name's Sam Noir, and this weathered face has seen enough darkness to fill a dozen lifetimes.
                   </p>
 
                   <p className="text-foreground">
-                    Started as a beat cop with dreams of making a difference. *Chuckles bitterly* 
-                    The city has a way of beating those dreams out of you, one case at a time.
+                    Started as a beat cop with dreams of making a difference. *Adjusts the brim of my fedora* 
+                    The city has a way of carving those dreams right out of your soul, one corpse at a time.
                   </p>
 
                   <p className="text-muted-foreground">
-                    Eight hundred and forty-seven cases closed. Each one carved a little deeper into my soul. 
-                    But someone has to stand between the innocent and the wolves prowling these neon-lit streets.
+                    Eight hundred and forty-seven cases closed. Each one etched deeper lines into this face, 
+                    deeper shadows under these eyes. But someone has to stand between the innocent and the predators 
+                    prowling these rain-soaked streets.
+                  </p>
+
+                  <p className="text-foreground">
+                    *Pulls the trench coat tighter against the perpetual chill*
                   </p>
 
                   <div className="bg-accent/10 border border-accent/30 rounded-lg p-4">
                     <p className="text-accent font-medium">
-                      "The bourbon helps me forget the faces of the victims... but never the faces of the killers."
+                      "The bourbon burns away the taste of disappointment... but never quite washes away the stench of corruption."
                     </p>
                   </div>
                 </div>
@@ -153,17 +158,21 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                   
                   <p className="text-foreground">
                     Another night, another body. The city never sleeps, and neither do her monsters. 
-                    Someone out there thinks they're clever enough to get away with murder.
+                    Someone out there thinks they're clever enough to outsmart a weathered old detective.
+                  </p>
+
+                  <p className="text-foreground italic">
+                    *Steps into the rain, collar turned up against the night, fedora pulled low*
                   </p>
 
                   <p className="text-foreground">
-                    *Adjusts the fedora, checks the .38 in my shoulder holster*
+                    They're wrong. Dead wrong. These scars on my face, the lines around my eyes - 
+                    they're a map of every lie I've unraveled, every truth I've dragged kicking and 
+                    screaming out of the shadows.
                   </p>
 
-                  <p className="text-foreground">
-                    They're wrong. Dead wrong. In this business, you learn to read between the lies, 
-                    to see the truth hiding in the shadows. Every killer leaves a trail - you just 
-                    have to know how to follow it.
+                  <p className="text-muted-foreground">
+                    *The rain drums against my coat like bullets on concrete*
                   </p>
 
                   <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 text-center">
@@ -171,7 +180,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                       "Time to get to work."
                     </p>
                     <p className="text-muted-foreground italic">
-                      In a world where everyone lies, the truth is the most dangerous weapon.
+                      In this city of lies, a weathered detective is the only thing standing between justice and chaos.
                     </p>
                   </div>
                 </div>
