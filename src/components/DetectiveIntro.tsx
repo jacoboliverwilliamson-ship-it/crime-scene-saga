@@ -56,8 +56,8 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <p className="text-muted-foreground">
                     Eight hundred and forty-seven cases closed. Each one etched deeper lines into this face, 
-                    deeper shadows under these eyes. But someone has to stand between the innocent and the predators 
-                    prowling these rain-soaked streets.
+                    deeper shadows under these eyes. Give me black coffee and straight bourbon - none of that 
+                    fancy latte nonsense the younger cops waste their money on.
                   </p>
 
                   <p className="text-foreground">
@@ -66,7 +66,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <div className="bg-accent/10 border border-accent/30 rounded-lg p-4">
                     <p className="text-accent font-medium">
-                      "The bourbon burns away the taste of disappointment... but never quite washes away the stench of corruption."
+                      "The bourbon burns away the taste of disappointment... and drowns out the stench of bologna from Tony's deli downstairs."
                     </p>
                   </div>
                 </div>
@@ -107,12 +107,14 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <p className="text-foreground">
                     Murder in the penthouses, corruption in the precincts, betrayal in every back alley. 
-                    The war ended, but the real battle started right here on these streets.
+                    The war ended, but the real battle started right here on these streets. And don't get me 
+                    started on these new coffee shops - five bucks for what they call a "macchiato." 
                   </p>
 
                   <p className="text-muted-foreground">
                     Seventy-three percent above the national average, they say. I say those numbers don't 
-                    capture the half of it. Every shadow hides a secret, every secret hides a crime.
+                    capture the half of it. Every shadow hides a secret, every secret hides a crime. 
+                    And every deli corner reeks of that God-awful bologna smell.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
