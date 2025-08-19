@@ -24,7 +24,7 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
     switch (currentPage) {
       case 0:
         return (
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4 animate-fade-in">
               <h1 className="text-6xl font-bold text-foreground drop-shadow-2xl">
                 Detective Case Files
@@ -32,23 +32,12 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
               <p className="text-xl text-muted-foreground">The City Never Sleeps</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Sam Noir Photo */}
-              <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/269a976a-8a28-4ddf-b95e-80cd8da2f820.png" 
-                  alt="Detective Sam Noir" 
-                  className="w-full max-w-md rounded-lg shadow-[var(--shadow-noir)] border border-border animate-scale-in"
-                />
-              </div>
-
-              {/* Character Details */}
-              <Card className="p-8 bg-card/95 backdrop-blur-sm border-border shadow-[var(--shadow-noir)] animate-scale-in">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3 text-primary mb-6">
-                    <Cigarette className="w-6 h-6" />
-                    <h2 className="text-2xl font-bold">The Detective</h2>
-                  </div>
+            <Card className="p-8 bg-card/95 backdrop-blur-sm border-border shadow-[var(--shadow-noir)] animate-scale-in">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 text-primary mb-6">
+                  <Cigarette className="w-6 h-6" />
+                  <h2 className="text-2xl font-bold">The Detective</h2>
+                </div>
 
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground italic">
@@ -67,14 +56,8 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <p className="text-muted-foreground">
                     Eight hundred and forty-seven cases closed. Each one etched deeper lines into this face, 
-                    deeper shadows under these eyes. Give me black coffee and straight bourbon - none of that 
-                    fancy latte nonsense the younger cops waste their money on.
-                  </p>
-
-                  <p className="text-foreground">
-                    *Pats the .38 Special under my trenchcoat* 
-                    My faithful tool's been with me through every case. Some nights I can't wait to use it - 
-                    blow some domes clean off the shoulders of the scum that think they run this city.
+                    deeper shadows under these eyes. But someone has to stand between the innocent and the predators 
+                    prowling these rain-soaked streets.
                   </p>
 
                   <p className="text-foreground">
@@ -83,13 +66,12 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <div className="bg-accent/10 border border-accent/30 rounded-lg p-4">
                     <p className="text-accent font-medium">
-                      "The bourbon burns away the taste of disappointment... and drowns out the stench of bologna from Tony's deli downstairs. That man reeks of garlic like he bathes in the stuff."
+                      "The bourbon burns away the taste of disappointment... but never quite washes away the stench of corruption."
                     </p>
                   </div>
-                  </div>
                 </div>
-              </Card>
-            </div>
+              </div>
+            </Card>
 
             <div className="flex justify-center">
               <Button 
@@ -125,14 +107,12 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
 
                   <p className="text-foreground">
                     Murder in the penthouses, corruption in the precincts, betrayal in every back alley. 
-                    The war ended, but the real battle started right here on these streets. And don't get me 
-                    started on these new coffee shops - five bucks for what they call a "macchiato." 
+                    The war ended, but the real battle started right here on these streets.
                   </p>
 
                   <p className="text-muted-foreground">
                     Seventy-three percent above the national average, they say. I say those numbers don't 
-                    capture the half of it. Every shadow hides a secret, every secret hides a crime. 
-                    And every deli corner reeks of that God-awful bologna smell mixed with Tony's perpetual garlic stench.
+                    capture the half of it. Every shadow hides a secret, every secret hides a crime.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,13 +162,13 @@ export const DetectiveIntro: React.FC<DetectiveIntroProps> = ({ onStartGame }) =
                   </p>
 
                   <p className="text-foreground italic">
-                    *Steps into the rain, collar turned up against the night, fedora pulled low, hand resting on the tool under my coat*
+                    *Steps into the rain, collar turned up against the night, fedora pulled low*
                   </p>
 
                   <p className="text-foreground">
                     They're wrong. Dead wrong. These scars on my face, the lines around my eyes - 
                     they're a map of every lie I've unraveled, every truth I've dragged kicking and 
-                    screaming out of the shadows. And my trusty .38 has helped settle more than a few arguments.
+                    screaming out of the shadows.
                   </p>
 
                   <p className="text-muted-foreground">

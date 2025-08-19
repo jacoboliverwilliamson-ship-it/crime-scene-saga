@@ -3,9 +3,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, XCircle, User, FileText, ArrowRight, AlertTriangle, Zap, Car } from 'lucide-react';
+import { CheckCircle, XCircle, User, FileText, ArrowRight, AlertTriangle, Zap } from 'lucide-react';
 import { ExecutionScene } from './ExecutionScene';
-import { CarChase } from './CarChase';
 import type { Suspect } from '../types/game';
 
 interface ConvictionResultProps {
@@ -24,46 +23,16 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
   onNext 
 }) => {
   const [showExecution, setShowExecution] = useState(false);
-  const [showCarChase, setShowCarChase] = useState(false);
   const [executionComplete, setExecutionComplete] = useState(false);
-  const [chaseResult, setChaseResult] = useState<'caught' | 'escaped' | null>(null);
 
   const handleProceedToExecution = () => {
-    // 30% chance of car chase before execution
-    if (Math.random() < 0.3) {
-      setShowCarChase(true);
-    } else {
-      setShowExecution(true);
-    }
-  };
-
-  const handleChaseCaught = () => {
-    setShowCarChase(false);
-    setChaseResult('caught');
     setShowExecution(true);
-  };
-
-  const handleChaseEscaped = () => {
-    setShowCarChase(false);
-    setChaseResult('escaped');
-    setExecutionComplete(true);
   };
 
   const handleExecutionComplete = () => {
     setShowExecution(false);
     setExecutionComplete(true);
   };
-
-  // Show car chase scene
-  if (showCarChase) {
-    return (
-      <CarChase 
-        suspect={accusedSuspect} 
-        onCaught={handleChaseCaught}
-        onEscaped={handleChaseEscaped}
-      />
-    );
-  }
 
   // Show execution scene
   if (showExecution) {
@@ -76,12 +45,7 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
   }
   return (
     <Dialog open={true}>
-      <DialogContent className="max-w-3xl bg-card border-border max-h-[90vh] overflow-y-auto relative">
-        {/* Detective Contemplation Background */}
-        <div 
-          className="absolute inset-0 opacity-10 bg-cover bg-center rounded-lg"
-          style={{ backgroundImage: 'url(/lovable-uploads/95a8e041-4a8e-4aa1-996e-74e0b6d299cc.png)' }}
-        />
+      <DialogContent className="max-w-3xl bg-card border-border max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             {isCorrect ? (
@@ -165,40 +129,22 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
             </div>
           )}
 
-          {/* Chase Result Notice */}
-          {chaseResult === 'escaped' && (
-            <Card className="p-4 bg-warning/20 border-warning text-center">
-              <div className="space-y-2">
-                <Car className="text-warning w-8 h-8 mx-auto" />
-                <p className="text-warning font-bold">SUSPECT ESCAPED</p>
-                <p className="text-sm text-muted-foreground">
-                  {accusedSuspect.name} managed to flee during the high-speed chase
-                </p>
-              </div>
-            </Card>
-          )}
-
           {/* Execution Notice */}
-          {executionComplete && chaseResult !== 'escaped' && (
+          {executionComplete && (
             <Card className="p-4 bg-destructive/20 border-destructive text-center">
               <div className="space-y-2">
                 <Zap className="text-destructive w-8 h-8 mx-auto" />
-                <p className="text-destructive font-bold">
-                  {chaseResult === 'caught' ? 'CAPTURED AND EXECUTED' : 'SENTENCE EXECUTED'}
-                </p>
+                <p className="text-destructive font-bold">SENTENCE EXECUTED</p>
                 <p className="text-sm text-muted-foreground">
-                  {chaseResult === 'caught' 
-                    ? `${accusedSuspect.name} was caught after a dramatic chase and executed`
-                    : `${accusedSuspect.name} has paid the ultimate price`
-                  }
+                  {accusedSuspect.name} has paid the ultimate price
                 </p>
               </div>
             </Card>
           )}
 
-          {/* Action Buttons - Different based on correctness */}
+          {/* Continue Button */}
           <div className="flex justify-center gap-4 pt-4">
-            {isCorrect && !executionComplete && !showCarChase && !showExecution && (
+            {!executionComplete && (
               <Button 
                 onClick={handleProceedToExecution}
                 size="lg"
@@ -210,37 +156,7 @@ export const ConvictionResult: React.FC<ConvictionResultProps> = ({
               </Button>
             )}
             
-            {!isCorrect && !executionComplete && !showCarChase && !showExecution && (
-              <div className="flex flex-col gap-3 items-center">
-                <p className="text-sm text-muted-foreground text-center">
-                  What happens to the wrongly convicted?
-                </p>
-                <div className="flex gap-3">
-                  <Button 
-                    onClick={() => {
-                      // Show life sentence instead of execution
-                      setExecutionComplete(true);
-                    }}
-                    size="lg"
-                    variant="outline"
-                    className="border-muted-foreground text-foreground hover:bg-muted"
-                  >
-                    Life in Prison
-                  </Button>
-                  <Button 
-                    onClick={handleProceedToExecution}
-                    size="lg"
-                    variant="destructive"
-                    className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-                  >
-                    <AlertTriangle className="mr-2 w-4 h-4" />
-                    Execute Anyway
-                  </Button>
-                </div>
-              </div>
-            )}
-            
-            {(executionComplete || chaseResult === 'escaped') && (
+            {executionComplete && (
               <Button 
                 onClick={onNext}
                 size="lg"
